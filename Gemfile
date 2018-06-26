@@ -1,105 +1,32 @@
-# If you have OpenSSL installed, we recommend updating
-# the following line to use "https"
-source 'https://rubygems.org'
-source 'https://rails-assets.org'
+source "https://rubygems.org"
 
-gem "middleman", "~> 3.3.10"
+# Hello! This is where you manage which Jekyll version is used to run.
+# When you want to use a different version, change it below, save the
+# file and run `bundle install`. Run Jekyll with `bundle exec`, like so:
+#
+#     bundle exec jekyll serve
+#
+# This will help ensure the proper Jekyll version is running.
+# Happy Jekylling!
+gem "jekyll", "~> 3.8.3"
 
-gem 'compass', '~> 1'
+# This is the default theme for new Jekyll sites. You may change this to anything you like.
+gem "minima", "~> 2.0"
 
-# Live-reloading plugin
-gem "middleman-livereload"
-
-# Cross-templating language block fix for Ruby 1.8
-platforms :mri_18 do
-  gem "ruby18_source_location"
-end
-
-# For faster file watcher updates for people using Windows
-gem "wdm", "~> 0.1.0", :platforms => [:mswin, :mingw]
-
-
-#####
-# General plugins
-
-# Blog plugin
-gem "middleman-blog"
-#gem "middleman-blog-drafts"
-#gem "middleman-blog-authors"
-
-# Thumbnailer
-#gem "middleman-thumbnailer", github: "nhemsley/middleman-thumbnailer"
-
-# favicon support (favicon PNG should be 144×144)
-gem "middleman-favicon-maker"
-
-# HTML & XML parsing smarts
-gem "nokogiri", "~> 1.6.0"
-gem 'mini_portile'
-
-# Syntax highlighting
-gem "middleman-syntax"
-
-# For feed.xml.builder
-gem "builder", "~> 3.0"
-
-# Better JSON lib
-gem "oj", "~> 3.3"
-
-# Lock jQuery to 1.x, for better IE support (6 - 8)
-# Fixes and features are backported from 2.x to 1.x; only diff is IE support.
-# see http://blog.jquery.com/2013/01/15/jquery-1-9-final-jquery-2-0-beta-migrate-final-released/
-gem 'rails-assets-jquery', '~> 1'
-
-# Friendly date library
-gem 'chronic'
-
-#####
-# Bootstrap
-
-# Bootstrap, as SASS
 gem "bootstrap-sass"
 
+# If you want to use GitHub Pages, remove the "gem "jekyll"" above and
+# uncomment the line below. To upgrade, run `bundle update github-pages`.
+# gem "github-pages", group: :jekyll_plugins
 
-#####
-# Formats
+# If you have any plugins, put them here!
+group :jekyll_plugins do
+  gem "jekyll-feed", "~> 0.6"
+end
 
-# haml
-gem "haml", "~> 4.0"
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-# less (css)
-gem "therubyracer"
-gem "less"
-
-# asciidoctor
-gem "asciidoctor"
-
-gem "coderay"
-gem "stringex"
-
-# Markdown
-# pinned to fix issue with https://github.com/gettalong/kramdown/pull/513
-# and https://github.com/redhat-openstack/website/pull/1218
-gem "kramdown", "~> 1.16.0"
-
-gem 'open-uri-cached'
-
-gem 'font-awesome-middleman'
-
-# RSS/Atom parsing
-gem "feedjira"
-
-gem 'rails-assets-bootstrap-sortable'
-
-gem 'rails-assets-momentjs'
-gem 'rails-assets-fullcalendar'
-gem 'icalendar', '~> 1.5'
-
-gem 'slop', '~> 4'
-gem 'launchy'
-
-# for fetch-dashboard.rb script
-gem 'activesupport'
-# for dashboard display
-gem 'rails-assets-chartjs', '~> 2.1'
+# Performance-booster for watching directories on Windows
+gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
